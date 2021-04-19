@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1DFABB53D5E18E383977BAFC /* Pods_FoodRecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3DC0DA3F2960B0353FED95 /* Pods_FoodRecipesTests.framework */; };
+		66281535262D6FF10071F22D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66281534262D6FF10071F22D /* RegistrationController.swift */; };
 		66E584BA262A7CCD00A619A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E584B9262A7CCD00A619A6 /* AppDelegate.swift */; };
 		66E584BC262A7CCD00A619A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E584BB262A7CCD00A619A6 /* ViewController.swift */; };
 		66E584BF262A7CCD00A619A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E584BD262A7CCD00A619A6 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66281534262D6FF10071F22D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		66E584B6262A7CCD00A619A6 /* FoodRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E584B9262A7CCD00A619A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66E584BB262A7CCD00A619A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				66E584BB262A7CCD00A619A6 /* ViewController.swift */,
+				66281534262D6FF10071F22D /* RegistrationController.swift */,
 				66E584BD262A7CCD00A619A6 /* Main.storyboard */,
 				66E584DB262A7EC400A619A6 /* System files */,
 			);
@@ -136,7 +139,6 @@
 				6FDBE4782FF1B13B88ED9EDB /* Pods-FoodRecipesTests.debug.xcconfig */,
 				F48D2623E72C0EAF0B6C6A3F /* Pods-FoodRecipesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -310,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66E584BC262A7CCD00A619A6 /* ViewController.swift in Sources */,
+				66281535262D6FF10071F22D /* RegistrationController.swift in Sources */,
 				66E584BA262A7CCD00A619A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
