@@ -78,14 +78,35 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnLogin(_ sender: UIButton) {
+        var count = 0
+        for user in userData {
+            if let userName = txtUserName.text, let password = txtPassword.text {
+                if userName == user.userName && password == user.password{
+                    count += 1
+                    
+                    let alert = UIAlertController(title: "Thông báo", message: "Đăng nhập thành công!", preferredStyle: UIAlertController.Style.alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            else{
+                let alert = UIAlertController(title: "Thông báo", message: "Bạn chưa nhập đủ thông tin!", preferredStyle: UIAlertController.Style.alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
         
-        
-        
-        let alert = UIAlertController(title: "Thông báo", message: "Result: \(userData.count)", preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
+        if count == 0 {
+            let alert = UIAlertController(title: "Thông báo", message: "Đăng nhập thất bại!", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
         
     }
 }
