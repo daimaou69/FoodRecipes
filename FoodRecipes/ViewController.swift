@@ -13,16 +13,18 @@ class User{
     var userID:String
     var userName:String
     var fullName:String
+    var image:String
     var dateOfBirth:String
     var email:String
     var phoneNumber:String
     var address:String
     var password:String
     
-    init(userID: String, userName:String, fullName:String, dateOfBirth:String, email:String, phoneNumber:String, address:String, password:String) {
+    init(userID: String, userName:String, fullName:String, image:String, dateOfBirth:String, email:String, phoneNumber:String, address:String, password:String) {
         self.userID = userID
         self.userName = userName
         self.fullName = fullName
+        self.image = image
         self.dateOfBirth = dateOfBirth
         self.email = email
         self.phoneNumber = phoneNumber
@@ -60,6 +62,7 @@ class ViewController: UIViewController {
                     let userID = user["userID"] as? String,
                     let userName = user["userName"] as? String,
                     let fullName = user["fullName"] as? String,
+                    let image = user["image"] as? String,
                     let dateOfBirth = user["dateOfBirth"] as? String,
                     let email = user["email"] as? String,
                     let phoneNumber = user["phoneNumber"] as? String,
@@ -68,7 +71,7 @@ class ViewController: UIViewController {
                         continue
                 }
                 
-                self.userData.append(User(userID: userID, userName: userName, fullName: fullName, dateOfBirth: dateOfBirth, email: email, phoneNumber: phoneNumber, address: address, password: password))
+                self.userData.append(User(userID: userID, userName: userName, fullName: fullName, image: image, dateOfBirth: dateOfBirth, email: email, phoneNumber: phoneNumber, address: address, password: password))
             }
         })
         
