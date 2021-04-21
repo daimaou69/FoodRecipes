@@ -18,7 +18,6 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
     
     var userData = [User]()
     
-    
     @IBOutlet weak var profileIMG: UIImageView!
     
     @IBOutlet weak var txtUserName: UITextField!
@@ -30,10 +29,22 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtConfirm: UITextField!
     
+    private var datePicker:UIDatePicker?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(RegistrationController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        /*let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RegistrationController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)*/
+        
+        txtDateOfBirth.inputView = datePicker
         
         ref = Database.database().reference()
         databaseHandle = ref.child("User").observe(DataEventType.value, with: { (snapshot) in
@@ -62,7 +73,18 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
         })
     }
     
+    /*@objc func viewTapped( gestureRecognizer:UITapGestureRecognizer){
+        view.endEditing(true)
+    }*/
     
+    @objc func dateChanged(datePicker:UIDatePicker){
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        txtDateOfBirth.text = dateFormatter.string(from: datePicker.date)
+        //view.endEditing(true)
+    }
     
     @IBAction func btnImageSelect(_ sender: UIButton) {
         let alert = UIAlertController(title: "Choose your   ", message: "", preferredStyle: UIAlertController.Style.alert)
