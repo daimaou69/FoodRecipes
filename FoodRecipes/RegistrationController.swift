@@ -17,6 +17,10 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
     var storef: StorageReference!
     
     var userData = [User]()
+    var gender:String = ""
+    
+    @IBOutlet weak var btnMale: UIButton!
+    @IBOutlet weak var btnFemale: UIButton!
     
     @IBOutlet weak var profileIMG: UIImageView!
     
@@ -25,7 +29,7 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var txtDateOfBirth: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPhoneNumber: UITextField!
-    @IBOutlet weak var txtAddress: UITextField!
+    //@IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtConfirm: UITextField!
     
@@ -35,6 +39,11 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        profileIMG.layer.cornerRadius = profileIMG.frame.width / 2
+        profileIMG.clipsToBounds = true
+        profileIMG.layer.borderColor = UIColor.black.cgColor
+        profileIMG.layer.borderWidth = 1
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
@@ -63,12 +72,12 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
                     let dateOfBirth = user["dateOfBirth"] as? String,
                     let email = user["email"] as? String,
                     let phoneNumber = user["phoneNumber"] as? String,
-                    let address = user["address"] as? String,
+                    let gender = user["gender"] as? String,
                     let password = user["password"] as? String else {
                         continue
                 }
                 
-                self.userData.append(User(userID: userID, userName: userName, fullName: fullName, image: image, dateOfBirth: dateOfBirth, email: email, phoneNumber: phoneNumber, address: address, password: password))
+                self.userData.append(User(userID: userID, userName: userName, fullName: fullName, image: image, dateOfBirth: dateOfBirth, email: email, phoneNumber: phoneNumber, gender: gender, password: password))
             }
         })
     }
@@ -76,6 +85,25 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
     /*@objc func viewTapped( gestureRecognizer:UITapGestureRecognizer){
         view.endEditing(true)
     }*/
+    
+    
+    @IBAction func btnCheckTapped(_ sender: UIButton) {
+        sender.isSelected = true
+        gender = "Male"
+        if btnFemale.isSelected == true {
+            btnFemale.isSelected = false
+        }
+    }
+    
+    
+    @IBAction func btnFCheckTapped(_ sender: UIButton) {
+        sender.isSelected = true
+        gender = "Female"
+        gender = "Female"
+        if btnMale.isSelected == true {
+            btnMale.isSelected = false
+        }
+    }
     
     @objc func dateChanged(datePicker:UIDatePicker){
         
@@ -125,38 +153,35 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
         
         if let userName = txtUserName.text, let fullName = txtFullName.text,
             let dateOfBirth = txtDateOfBirth.text, let email = txtEmail.text,
-            let phoneNumber = txtPhoneNumber.text, let address = txtAddress.text,
+            let phoneNumber = txtPhoneNumber.text,
             let password = txtPassword.text, let confirm = txtConfirm.text {
             
-            if userName != "" && fullName != "" && dateOfBirth != "" && email != "" && phoneNumber != "" && address != "" && password != "" && confirm != "" {
+            if userName != "" && fullName != "" && dateOfBirth != "" && email != "" && phoneNumber != "" && self.gender != "" && password != "" && confirm != "" {
                 if userNameCheck(userName: userName, phoneNumber: phoneNumber, email: email, users: userData) == 1 {
                     let alert = UIAlertController(title: "Thông báo", message: "User name đã tồn tại!", preferredStyle: UIAlertController.Style.alert)
                     
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     
                     self.present(alert, animated: true, completion: nil)
-                }
-                else if userNameCheck(userName: userName, phoneNumber: phoneNumber, email: email, users: userData) == 2 {
+                }else if userNameCheck(userName: userName, phoneNumber: phoneNumber, email: email, users: userData) == 2 {
                     let alert = UIAlertController(title: "Thông báo", message: "Số điện thoại đã tồn tại!", preferredStyle: UIAlertController.Style.alert)
                     
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     
                     self.present(alert, animated: true, completion: nil)
-                }
-                else if userNameCheck(userName: userName, phoneNumber: phoneNumber, email: email, users: userData) == 3 {
+                }else if userNameCheck(userName: userName, phoneNumber: phoneNumber, email: email, users: userData) == 3 {
                     let alert = UIAlertController(title: "Thông báo", message: "Email đã tồn tại!", preferredStyle: UIAlertController.Style.alert)
                     
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     
                     self.present(alert, animated: true, completion: nil)
-                }
-                else{
+                }else{
                     if password == confirm {
                         let alert = UIAlertController(title: "Xác nhận", message: "Xác nhận đúng thông tin và đăng ký?", preferredStyle: UIAlertController.Style.alert)
                         
                         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { action in
                             
-                            self.createUser(userName: userName, fullName: fullName, dateOfBirth: dateOfBirth, email: email, phoneNumber: phoneNumber, address: address, password: password)
+                            self.createUser(userName: userName, fullName: fullName, dateOfBirth: dateOfBirth, email: email, phoneNumber: phoneNumber, gender: self.gender, password: password)
                             
                             let alert = UIAlertController(title: "Thông báo", message: "Tạo tài khoản thành công!", preferredStyle: UIAlertController.Style.alert)
                             
@@ -175,8 +200,7 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
                         self.present(alert, animated: true, completion: nil)
                         
                         
-                    }
-                    else{
+                    }else{
                         let alert = UIAlertController(title: "Thông báo", message: "Bạn nhập sai mật khẩu!", preferredStyle: UIAlertController.Style.alert)
                         
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -205,7 +229,7 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
         present(scr, animated: true, completion: nil)
     }
     
-    func createUser(userName:String, fullName:String, dateOfBirth:String, email:String, phoneNumber:String, address:String, password:String){
+    func createUser(userName:String, fullName:String, dateOfBirth:String, email:String, phoneNumber:String, gender:String, password:String){
 
         /*guard let image = profileIMG.image,
             let data = image.jpegData(compressionQuality: 1.0) else {
@@ -225,7 +249,7 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
         
         if let imgData = data, let imageN = imageName.key {
             
-            storef = Storage.storage().reference().child("ProfileImages").child(imageN)
+            storef = Storage.storage().reference().child("ProfileImages").child(imageN + ". ")
             
             /*let uploadTask = storef.putData(imgData, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
@@ -258,7 +282,7 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
                 "dateOfBirth": dateOfBirth,
                 "email": email,
                 "phoneNumber": phoneNumber,
-                "address": address,
+                "gender": gender,
                 "password": password
                 ])
         }
