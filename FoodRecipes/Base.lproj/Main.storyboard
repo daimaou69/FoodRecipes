@@ -294,10 +294,166 @@
             </objects>
             <point key="canvasLocation" x="653.62318840579712" y="95.758928571428569"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="rJS-wE-XHW">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavigationController" id="VVg-tS-Jm1" customClass="HomeNavigationController" customModule="FoodRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="HomeIcon" id="C3p-H8-IhE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oX8-dJ-Ptu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="896-zO-1sI" kind="relationship" relationship="rootViewController" id="xuS-We-cXi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xo8-Z4-MxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="1593"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="5Ee-1S-6WN">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="896-zO-1sI" customClass="HomeViewController" customModule="FoodRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tdz-qp-byO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UeH-UK-jgb">
+                                <rect key="frame" x="54.694198394338741" y="263" width="300.00000000000006" height="30.000000000000455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RIo-Qn-yol"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="h9r-ld-fFR"/>
+                    <connections>
+                        <outlet property="txtTest" destination="UeH-UK-jgb" id="jAv-mo-KK6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zoe-Oo-Zlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-720" y="2378"/>
+        </scene>
+        <!--New Recipe-->
+        <scene sceneID="uSw-e4-taI">
+            <objects>
+                <viewController storyboardIdentifier="NewRecipeViewController" id="sDf-9G-3Ud" customClass="NewRecipeViewController" customModule="FoodRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fHL-gx-b9b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ra-ys-sFB">
+                                <rect key="frame" x="172" y="245" width="72" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hS5-OS-esm"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Recipe" id="n6R-jE-qZ0"/>
+                    <connections>
+                        <outlet property="btnTest" destination="0Ra-ys-sFB" id="8z5-tl-BdM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBu-pd-sFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="2361"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="EI6-bT-4MJ">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" id="iRI-HC-7dc" customClass="SettingViewController" customModule="FoodRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n0E-we-eDp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQu-gv-vD2">
+                                <rect key="frame" x="5.6678961083148351" y="220" width="400" height="30.000000000000455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TcE-pN-Ni7"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Setting" id="zeA-sj-Cq5"/>
+                    <connections>
+                        <outlet property="lblUserIDTest" destination="gQu-gv-vD2" id="drX-1r-tlX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cy0-OY-xiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1674" y="2378"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="rKQ-8O-3d9">
+            <objects>
+                <navigationController storyboardIdentifier="SettingNavigationController" id="q0e-jG-Bpt" customClass="SettingNavigationController" customModule="FoodRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="SettingIcon" id="u6D-Zg-2Vm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SQL-w6-Cw1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iRI-HC-7dc" kind="relationship" relationship="rootViewController" id="sdt-Ht-Rxv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nf6-lp-crY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1675" y="1592"/>
+        </scene>
+        <!--New recipe-->
+        <scene sceneID="VUT-9s-YUh">
+            <objects>
+                <navigationController storyboardIdentifier="NewRecipeNavigationController" id="r9V-lf-2VP" customClass="NewRecipeNavigationController" customModule="FoodRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="New recipe" image="NewRecipeIcon" id="qEi-NY-V6X"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ei8-ZX-dka">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sDf-9G-3Ud" kind="relationship" relationship="rootViewController" id="y6O-8R-wtQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WFg-LR-sR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="501" y="1592"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="DeJ-4p-beS">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" id="G8e-YS-zlk" customClass="MainTabBarController" customModule="FoodRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bEI-2r-kHS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VVg-tS-Jm1" kind="relationship" relationship="viewControllers" id="c38-0g-igj"/>
+                        <segue destination="r9V-lf-2VP" kind="relationship" relationship="viewControllers" id="yt0-Nt-MsL"/>
+                        <segue destination="q0e-jG-Bpt" kind="relationship" relationship="viewControllers" id="M4n-ym-ycX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bQ-A9-BYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="502" y="839"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AccountIMG" width="256" height="256"/>
         <image name="CheckBox" width="226" height="226"/>
+        <image name="HomeIcon" width="24" height="24"/>
+        <image name="NewRecipeIcon" width="24" height="24"/>
+        <image name="SettingIcon" width="24" height="24"/>
         <image name="UnCheckBox" width="226" height="226"/>
     </resources>
 </document>

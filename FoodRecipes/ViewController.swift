@@ -88,18 +88,6 @@ class ViewController: UIViewController {
         //navigationController?.pushViewController(scr, animated: true)
         
         
-        /*ref = Database.database().reference()
-        
-        let id = ref.childByAutoId()
-        
-        if let userID = id.key, let userName = txtUserName.text, let password = txtPassword.text {
-            
-            self.ref.child("User").child(userID).setValue([
-                "userID": userID,
-                "userName": userName,
-                "password": password
-                ])
-        }*/
     }
     
     
@@ -110,11 +98,18 @@ class ViewController: UIViewController {
                 if userName == user.userName && password == user.password{
                     count += 1
                     
-                    let alert = UIAlertController(title: "Thông báo", message: "Đăng nhập thành công!", preferredStyle: UIAlertController.Style.alert)
+                    let main = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+                    
+                    main.userID = user.userID
+                    
+                    self.view.window?.rootViewController = main
+                    self.view.window?.makeKeyAndVisible()
+                    
+                    /*let alert = UIAlertController(title: "Thông báo", message: "Đăng nhập thành công!", preferredStyle: UIAlertController.Style.alert)
                     
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     
-                    self.present(alert, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)*/
                 }
             }
             else{
