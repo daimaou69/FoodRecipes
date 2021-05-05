@@ -7,31 +7,117 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+    
+    func load(_ urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
 
 class SettingViewController: UIViewController {
 
+    var ref:DatabaseReference!
+    var storage:StorageReference!
+    var databaseHandle:DatabaseHandle!
+    
     var userID:String!
     
-    @IBOutlet weak var lblUserIDTest: UILabel!
+    @IBOutlet weak var profileIMG: UIImageView!
+    
+    @IBOutlet weak var lblUserFullName : UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        lblUserIDTest.text = userID
         
-        // Do any additional setup after loading the view.
+        /*profileIMG.layer.cornerRadius = profileIMG.frame.width / 2
+        profileIMG.clipsToBounds = true
+        profileIMG.layer.borderColor = UIColor.black.cgColor
+        profileIMG.layer.borderWidth = 1*/
+   
+        ref = Database.database().reference()
+        
+        databaseHandle = ref.child("User").observe(DataEventType.value, with: { (snapshot) in
+            guard let values = snapshot.value as? [String:Any] else{return}
+            
+            for (key, value) in values {
+                guard let user = value as? [String: Any],
+                    let userID = user["userID"] as? String,
+                    let userName = user["userName"] as? String,
+                    let fullName = user["fullName"] as? String,
+                    let image = user["image"] as? String,
+                    let dateOfBirth = user["dateOfBirth"] as? String,
+                    let email = user["email"] as? String,
+                    let phoneNumber = user["phoneNumber"] as? String,
+                    let gender = user["gender"] as? String,
+                    let password = user["password"] as? String else {
+                        continue
+                }
+                
+                if self.userID == userID {
+                    self.storage = Storage.storage().reference().child("ProfileImages").child(image + ".jpeg")
+                    
+                    self.storage.downloadURL { (url, err) in
+                        if let error = err {
+                            // Handle any errors
+                        } else {
+                            if let urlString = url?.absoluteString{
+                                self.profileIMG.load(urlString)
+                            }
+                            
+                        }
+                    }
+                    self.lblUserFullName.text = fullName
+                }
+            }
+        })
+        
+        
+        
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func btnLogout(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Thông báo", message: "Bạn muốn đăng xuất?", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
+            
+            let login = self.storyboard?.instantiateViewController(withIdentifier: "LoginScreen") as! ViewController
+            
+            self.view.window?.rootViewController = login
+            self.view.window?.makeKeyAndVisible()
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
-    */
-
+    
 }

@@ -375,19 +375,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQu-gv-vD2">
-                                <rect key="frame" x="5.6678961083148351" y="220" width="400" height="30.000000000000455"/>
+                                <rect key="frame" x="194" y="111" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rug-qe-BBG">
+                                <rect key="frame" x="154.46714230961243" y="725" width="99.999999999999773" height="39.999999999999545"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.39075298419999999" green="1" blue="0.90839749970000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnLogout:" destination="iRI-HC-7dc" eventType="touchUpInside" id="5hj-hr-m06"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AccountIMG" translatesAutoresizingMaskIntoConstraints="NO" id="HYw-rS-ybt">
+                                <rect key="frame" x="43" y="111" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TcE-pN-Ni7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Setting" id="zeA-sj-Cq5"/>
                     <connections>
-                        <outlet property="lblUserIDTest" destination="gQu-gv-vD2" id="drX-1r-tlX"/>
+                        <outlet property="lblUserFullName" destination="gQu-gv-vD2" id="nV3-LD-Sn5"/>
+                        <outlet property="profileIMG" destination="HYw-rS-ybt" id="Vb3-TN-5Vj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cy0-OY-xiD" userLabel="First Responder" sceneMemberID="firstResponder"/>

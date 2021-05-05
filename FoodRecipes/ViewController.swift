@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         ref = Database.database().reference()
+        
         databaseHandle = ref.child("User").observe(DataEventType.value, with: { (snapshot) in
             guard let values = snapshot.value as? [String: Any] else {
                 return

@@ -40,10 +40,10 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
 
         // Do any additional setup after loading the view.
         
-        profileIMG.layer.cornerRadius = profileIMG.frame.width / 2
+        /*profileIMG.layer.cornerRadius = profileIMG.frame.width / 2
         profileIMG.clipsToBounds = true
         profileIMG.layer.borderColor = UIColor.black.cgColor
-        profileIMG.layer.borderWidth = 1
+        profileIMG.layer.borderWidth = 1*/
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
@@ -249,7 +249,7 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
         
         if let imgData = data, let imageN = imageName.key {
             
-            storef = Storage.storage().reference().child("ProfileImages").child(imageN + ". ")
+            storef = Storage.storage().reference().child("ProfileImages").child(imageN + ".jpeg")
             
             /*let uploadTask = storef.putData(imgData, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
