@@ -64,7 +64,7 @@ class SettingViewController: UIViewController {
         databaseHandle = ref.child("User").observe(DataEventType.value, with: { (snapshot) in
             guard let values = snapshot.value as? [String:Any] else{return}
             
-            for (key, value) in values {
+            for (_, value) in values {
                 guard let user = value as? [String: Any],
                     let userID = user["userID"] as? String,
                     let userName = user["userName"] as? String,
