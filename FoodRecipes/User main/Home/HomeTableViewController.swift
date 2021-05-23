@@ -80,7 +80,7 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
             return
         }
         searchRecipe = recipesList.filter({ (recipe) -> Bool in
-            recipe.tenMon.contains(searchText)
+            recipe.tenMon.lowercased().contains(searchText.lowercased())
         })
         self.tableView.reloadData()
     }
