@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6605A33E265A0FDA003236D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605A33D265A0FDA003236D8 /* User.swift */; };
+		6605A342265A10D1003236D8 /* CongThuc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605A341265A10D1003236D8 /* CongThuc.swift */; };
+		6605A344265A116D003236D8 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605A343265A116D003236D8 /* HomeTableViewController.swift */; };
+		6605A346265A1232003236D8 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605A345265A1232003236D8 /* HomeTableViewCell.swift */; };
 		6612D291264249DA00C1E2A6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612D290264249DA00C1E2A6 /* MainTabBarController.swift */; };
 		6612D29726424AAA00C1E2A6 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612D29626424AAA00C1E2A6 /* HomeNavigationController.swift */; };
 		6612D29926424ACE00C1E2A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612D29826424ACE00C1E2A6 /* HomeViewController.swift */; };
@@ -38,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		52965256743F7F3A7754DF8F /* Pods-FoodRecipesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesTests.release.xcconfig"; path = "Target Support Files/Pods-FoodRecipesTests/Pods-FoodRecipesTests.release.xcconfig"; sourceTree = "<group>"; };
+		6605A33D265A0FDA003236D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6605A341265A10D1003236D8 /* CongThuc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongThuc.swift; sourceTree = "<group>"; };
+		6605A343265A116D003236D8 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		6605A345265A1232003236D8 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		6612D290264249DA00C1E2A6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		6612D29626424AAA00C1E2A6 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		6612D29826424ACE00C1E2A6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6605A33C265A0FA6003236D8 /* Data models */ = {
+			isa = PBXGroup;
+			children = (
+				6605A33D265A0FDA003236D8 /* User.swift */,
+				6605A341265A10D1003236D8 /* CongThuc.swift */,
+			);
+			path = "Data models";
+			sourceTree = "<group>";
+		};
 		6612D28F2642499700C1E2A6 /* User main */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +117,8 @@
 			children = (
 				6612D29626424AAA00C1E2A6 /* HomeNavigationController.swift */,
 				6612D29826424ACE00C1E2A6 /* HomeViewController.swift */,
+				6605A343265A116D003236D8 /* HomeTableViewController.swift */,
+				6605A345265A1232003236D8 /* HomeTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -145,6 +164,7 @@
 		66E584B8262A7CCD00A619A6 /* FoodRecipes */ = {
 			isa = PBXGroup;
 			children = (
+				6605A33C265A0FA6003236D8 /* Data models */,
 				6612D28F2642499700C1E2A6 /* User main */,
 				66E584BB262A7CCD00A619A6 /* ViewController.swift */,
 				66281534262D6FF10071F22D /* RegistrationController.swift */,
@@ -366,14 +386,18 @@
 			files = (
 				6612D29726424AAA00C1E2A6 /* HomeNavigationController.swift in Sources */,
 				6612D29F26424B3900C1E2A6 /* SettingNavigationController.swift in Sources */,
+				6605A346265A1232003236D8 /* HomeTableViewCell.swift in Sources */,
 				6612D29D26424B1300C1E2A6 /* NewRecipeViewController.swift in Sources */,
 				66E584BC262A7CCD00A619A6 /* ViewController.swift in Sources */,
 				66281535262D6FF10071F22D /* RegistrationController.swift in Sources */,
 				6612D2A126424B4800C1E2A6 /* SettingViewController.swift in Sources */,
 				6612D29B26424AEB00C1E2A6 /* NewRecipeNavigationController.swift in Sources */,
 				6612D291264249DA00C1E2A6 /* MainTabBarController.swift in Sources */,
+				6605A344265A116D003236D8 /* HomeTableViewController.swift in Sources */,
+				6605A342265A10D1003236D8 /* CongThuc.swift in Sources */,
 				66E584BA262A7CCD00A619A6 /* AppDelegate.swift in Sources */,
 				6612D29926424ACE00C1E2A6 /* HomeViewController.swift in Sources */,
+				6605A33E265A0FDA003236D8 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

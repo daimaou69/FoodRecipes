@@ -63,7 +63,7 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
             
             self.userData = [User]()
             
-            for (key, value) in values {
+            for (_, value) in values {
                 guard let user = value as? [String: Any],
                     let userID = user["userID"] as? String,
                     let userName = user["userName"] as? String,

@@ -9,29 +9,7 @@
 import UIKit
 import Firebase
 
-class User{
-    var userID:String
-    var userName:String
-    var fullName:String
-    var image:String
-    var dateOfBirth:String
-    var email:String
-    var phoneNumber:String
-    var gender:String
-    var password:String
-    
-    init(userID: String, userName:String, fullName:String, image:String, dateOfBirth:String, email:String, phoneNumber:String, gender:String, password:String) {
-        self.userID = userID
-        self.userName = userName
-        self.fullName = fullName
-        self.image = image
-        self.dateOfBirth = dateOfBirth
-        self.email = email
-        self.phoneNumber = phoneNumber
-        self.gender = gender
-        self.password = password
-    }
-}
+
 
 class ViewController: UIViewController {
     

@@ -26,8 +26,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 }
             }
             if let homeNav = vc as? HomeNavigationController{
-                if let homeView = homeNav.viewControllers.first as? HomeViewController{
-                    homeView.userID = userID
+                if let homeTableView = homeNav.viewControllers.first as? HomeTableViewController{
+                    homeTableView.userID = userID
                 }
             }
             if let newRecipeNav = vc as? NewRecipeNavigationController{
