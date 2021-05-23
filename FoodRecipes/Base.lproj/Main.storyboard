@@ -382,6 +382,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Xm9-EQ-aUw"/>
+                    <connections>
+                        <outlet property="recipesTable" destination="RJD-Jx-z5u" id="Af6-5g-gJG"/>
+                        <outlet property="searchBar" destination="bYE-50-Faq" id="rFG-zC-SfZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9J-cm-9bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,18 +10,24 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController, UISearchBarDelegate {
 
+    
+    @IBOutlet var recipesTable: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle!
     var storef: StorageReference!
     
     var userID:String!
     var recipesList = [CongThuc]()
+    var searchRecipe = [CongThuc]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpSearchBar()
         /*let ct1 = CongThuc(congThucID: "JHJWFBKUJFSB", userID: "daimaou69", tenMon: "Mon Ngon", nguyenLieu: "Thit trau, thit heo, thit ga", cachCheBien: "jkfhgbgdfgjihdtghjidfhuihdfujdfhjidfgkh", hinhAnh: "uyHJBEHJFGHJKEBFIGH", luotQuanTam: 5)
         recipesList.append(ct1)
         
@@ -50,6 +56,8 @@ class HomeTableViewController: UITableViewController {
                 
                 self.recipesList.append(CongThuc(congThucID: congThucID, userID: userID, tenMon: tenMonAn, nguyenLieu: nguyenLieu, cachCheBien: cachCheBien, hinhAnh: hinhAnh, luotQuanTam: luotQuanTam))
                 
+                self.searchRecipe = self.recipesList
+                
                 self.tableView.reloadData()
             }
         })
@@ -61,6 +69,25 @@ class HomeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    func setUpSearchBar(){
+        searchBar.delegate = self
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            searchRecipe = recipesList
+            self.tableView.reloadData()
+            return
+        }
+        searchRecipe = recipesList.filter({ (recipe) -> Bool in
+            recipe.tenMon.contains(searchText)
+        })
+        self.tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
+        
+    }
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,7 +97,7 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return recipesList.count
+        return searchRecipe.count
     }
 
     
@@ -78,7 +105,7 @@ class HomeTableViewController: UITableViewController {
         let recipeCell = "RecipeViewCell"
         if let cell = tableView.dequeueReusableCell(withIdentifier: recipeCell, for: indexPath) as? HomeTableViewCell{
             
-            let recipe = recipesList[indexPath.row]
+            let recipe = searchRecipe[indexPath.row]
             
             self.storef = Storage.storage().reference().child("FoodImages").child(recipe.hinhAnh + ".jpeg")
             
