@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66052EDC2667EDE6008A8E2A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66052EDB2667EDE6008A8E2A /* Comment.swift */; };
 		6605A33E265A0FDA003236D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605A33D265A0FDA003236D8 /* User.swift */; };
 		6605A342265A10D1003236D8 /* CongThuc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605A341265A10D1003236D8 /* CongThuc.swift */; };
 		6605A344265A116D003236D8 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6605A343265A116D003236D8 /* HomeTableViewController.swift */; };
@@ -19,6 +20,8 @@
 		6612D29F26424B3900C1E2A6 /* SettingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612D29E26424B3900C1E2A6 /* SettingNavigationController.swift */; };
 		6612D2A126424B4800C1E2A6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6612D2A026424B4800C1E2A6 /* SettingViewController.swift */; };
 		66281535262D6FF10071F22D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66281534262D6FF10071F22D /* RegistrationController.swift */; };
+		669C8A7B266732D70048D865 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669C8A7A266732D70048D865 /* RecipeDetailViewController.swift */; };
+		669C8A7D26673B5A0048D865 /* RecipeDetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669C8A7C26673B5A0048D865 /* RecipeDetailNavigationController.swift */; };
 		66E584BA262A7CCD00A619A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E584B9262A7CCD00A619A6 /* AppDelegate.swift */; };
 		66E584BC262A7CCD00A619A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E584BB262A7CCD00A619A6 /* ViewController.swift */; };
 		66E584BF262A7CCD00A619A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E584BD262A7CCD00A619A6 /* Main.storyboard */; };
@@ -42,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		52965256743F7F3A7754DF8F /* Pods-FoodRecipesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesTests.release.xcconfig"; path = "Target Support Files/Pods-FoodRecipesTests/Pods-FoodRecipesTests.release.xcconfig"; sourceTree = "<group>"; };
+		66052EDB2667EDE6008A8E2A /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		6605A33D265A0FDA003236D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6605A341265A10D1003236D8 /* CongThuc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongThuc.swift; sourceTree = "<group>"; };
 		6605A343265A116D003236D8 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		6612D29E26424B3900C1E2A6 /* SettingNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNavigationController.swift; sourceTree = "<group>"; };
 		6612D2A026424B4800C1E2A6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		66281534262D6FF10071F22D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		669C8A7A266732D70048D865 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		669C8A7C26673B5A0048D865 /* RecipeDetailNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailNavigationController.swift; sourceTree = "<group>"; };
 		66E584B6262A7CCD00A619A6 /* FoodRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E584B9262A7CCD00A619A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66E584BB262A7CCD00A619A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 			children = (
 				6605A33D265A0FDA003236D8 /* User.swift */,
 				6605A341265A10D1003236D8 /* CongThuc.swift */,
+				66052EDB2667EDE6008A8E2A /* Comment.swift */,
 			);
 			path = "Data models";
 			sourceTree = "<group>";
@@ -104,6 +111,8 @@
 		6612D28F2642499700C1E2A6 /* User main */ = {
 			isa = PBXGroup;
 			children = (
+				669C8A7C26673B5A0048D865 /* RecipeDetailNavigationController.swift */,
+				669C8A7A266732D70048D865 /* RecipeDetailViewController.swift */,
 				6612D290264249DA00C1E2A6 /* MainTabBarController.swift */,
 				6612D29226424A2F00C1E2A6 /* Home */,
 				6612D29326424A3B00C1E2A6 /* New recipe */,
@@ -384,10 +393,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669C8A7D26673B5A0048D865 /* RecipeDetailNavigationController.swift in Sources */,
 				6612D29726424AAA00C1E2A6 /* HomeNavigationController.swift in Sources */,
 				6612D29F26424B3900C1E2A6 /* SettingNavigationController.swift in Sources */,
 				6605A346265A1232003236D8 /* HomeTableViewCell.swift in Sources */,
 				6612D29D26424B1300C1E2A6 /* NewRecipeViewController.swift in Sources */,
+				66052EDC2667EDE6008A8E2A /* Comment.swift in Sources */,
 				66E584BC262A7CCD00A619A6 /* ViewController.swift in Sources */,
 				66281535262D6FF10071F22D /* RegistrationController.swift in Sources */,
 				6612D2A126424B4800C1E2A6 /* SettingViewController.swift in Sources */,
@@ -397,6 +408,7 @@
 				6605A342265A10D1003236D8 /* CongThuc.swift in Sources */,
 				66E584BA262A7CCD00A619A6 /* AppDelegate.swift in Sources */,
 				6612D29926424ACE00C1E2A6 /* HomeViewController.swift in Sources */,
+				669C8A7B266732D70048D865 /* RecipeDetailViewController.swift in Sources */,
 				6605A33E265A0FDA003236D8 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

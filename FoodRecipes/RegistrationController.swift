@@ -115,7 +115,7 @@ class RegistrationController: UIViewController, UINavigationControllerDelegate, 
     }
     
     @IBAction func btnImageSelect(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Choose your   ", message: "", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Choose your image", message: "", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Select from library", style: UIAlertAction.Style.default, handler: { action in
             self.imageSource(sourceType: .photoLibrary)
