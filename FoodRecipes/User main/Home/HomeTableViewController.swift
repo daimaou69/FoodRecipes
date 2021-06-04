@@ -43,14 +43,14 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
             self.recipesList = [CongThuc]()
             
             for (_, value) in values {
-                guard let user = value as? [String: Any],
-                    let cachCheBien = user["cachCheBien"] as? String,
-                    let congThucID = user["congThucID"] as? String,
-                    let hinhAnh = user["hinhAnh"] as? String,
-                    let luotQuanTam = user["luotQuanTam"] as? Int,
-                    let nguyenLieu = user["nguyenLieu"] as? String,
-                    let tenMonAn = user["tenMonAn"] as? String,
-                    let userID = user["userID"] as? String else {
+                guard let recipe = value as? [String: Any],
+                    let cachCheBien = recipe["cachCheBien"] as? String,
+                    let congThucID = recipe["congThucID"] as? String,
+                    let hinhAnh = recipe["hinhAnh"] as? String,
+                    let luotQuanTam = recipe["luotQuanTam"] as? Int,
+                    let nguyenLieu = recipe["nguyenLieu"] as? String,
+                    let tenMonAn = recipe["tenMonAn"] as? String,
+                    let userID = recipe["userID"] as? String else {
                         continue
                 }
                 
@@ -68,6 +68,8 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
 
     func setUpSearchBar(){
         searchBar.delegate = self
@@ -87,6 +89,30 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
         
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //println(tasks[indexPath.row])
+        
+        
+        
+        let src = storyboard?.instantiateViewController(withIdentifier: "RecipeDetailNavigationController") as! RecipeDetailNavigationController
+        
+        let recipeDetail = src.viewControllers.first as! RecipeDetailViewController
+        
+        recipeDetail.recipeID = recipesList[indexPath.row].congThucID
+        
+        recipeDetail.userID = userID
+        
+        present(src, animated: true, completion: nil)
+        
+        
+        
+        /*let alert = UIAlertController(title: "Test", message: recipesList[indexPath.row].tenMon, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)*/
     }
     
     // MARK: - Table view data source
@@ -111,7 +137,7 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
             
             self.storef.downloadURL { (url, err) in
                 if let error = err{
-                    
+                    print(error.localizedDescription)
                 }else{
                     if let urlString = url?.absoluteString{
                         cell.foodIMG.load(urlString)
