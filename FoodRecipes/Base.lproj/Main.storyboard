@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65.217391304347828" y="95.758928571428569"/>
+            <point key="canvasLocation" x="-3358" y="1540"/>
         </scene>
         <!--Registration Controller-->
         <scene sceneID="vB1-4C-GAn">
@@ -292,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REe-MS-xlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653.62318840579712" y="95.758928571428569"/>
+            <point key="canvasLocation" x="-2641" y="1539"/>
         </scene>
         <!--Home-->
         <scene sceneID="rJS-wE-XHW">
@@ -310,6 +310,164 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xo8-Z4-MxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-719" y="1593"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="sUA-DH-W1r">
+            <objects>
+                <viewController storyboardIdentifier="RecipeDetailViewController" id="r4w-E0-nuf" customClass="RecipeDetailViewController" customModule="FoodRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="itW-EV-Qq2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmq-a1-Zkz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="1178"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvF-N7-DhJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nguyên liệu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQH-5C-CkN">
+                                                <rect key="frame" x="8" y="365" width="398" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lượt yêu thích: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1F-lx-etb">
+                                                <rect key="frame" x="8" y="325" width="234" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="gà, chó, lợn, bò, heo" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOf-qC-v2t">
+                                                <rect key="frame" x="8" y="394" width="398" height="70"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqf-Ko-kYf">
+                                                <rect key="frame" x="329" y="320" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Like"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3t-ZG-iu4">
+                                                <rect key="frame" x="316" y="908" width="43" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="Đăng"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1300" id="AFQ-ch-0x8"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XeI-ZY-5og">
+                                        <rect key="frame" x="82" y="10" width="250" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cách làm:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nc-FK-k6V">
+                                        <rect key="frame" x="10" y="480" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="gà, chó, lợn, bò, heo" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRK-Pe-ten">
+                                        <rect key="frame" x="10" y="509" width="398" height="259"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bình luận:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxe-QY-9Qo">
+                                        <rect key="frame" x="10" y="789" width="93" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SOU-K7-u8C">
+                                        <rect key="frame" x="10" y="821" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1V0-yA-xFx">
+                                        <rect key="frame" x="98" y="821" width="310" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANC-SR-bTX">
+                                        <rect key="frame" x="8" y="234" width="398" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jvF-N7-DhJ" secondAttribute="bottom" id="1tc-wI-k1u"/>
+                                    <constraint firstAttribute="trailing" secondItem="jvF-N7-DhJ" secondAttribute="trailing" id="2fo-nv-yCa"/>
+                                    <constraint firstItem="jvF-N7-DhJ" firstAttribute="top" secondItem="wmq-a1-Zkz" secondAttribute="top" id="Gvx-Cc-9jO"/>
+                                    <constraint firstItem="jvF-N7-DhJ" firstAttribute="leading" secondItem="wmq-a1-Zkz" secondAttribute="leading" id="eIi-Cu-s3l"/>
+                                    <constraint firstItem="jvF-N7-DhJ" firstAttribute="centerX" secondItem="wmq-a1-Zkz" secondAttribute="centerX" id="jD6-X7-uAR"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wmq-a1-Zkz" firstAttribute="leading" secondItem="E9V-5P-rYU" secondAttribute="leading" id="5tb-pL-iWA"/>
+                            <constraint firstItem="wmq-a1-Zkz" firstAttribute="trailing" secondItem="E9V-5P-rYU" secondAttribute="trailing" id="DJ1-pR-bVZ"/>
+                            <constraint firstItem="wmq-a1-Zkz" firstAttribute="top" secondItem="E9V-5P-rYU" secondAttribute="top" id="WWk-4p-Ki4"/>
+                            <constraint firstItem="wmq-a1-Zkz" firstAttribute="bottom" secondItem="E9V-5P-rYU" secondAttribute="bottom" id="nVH-8n-bGW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E9V-5P-rYU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="dvy-i1-1Ro">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="kpE-69-NNb">
+                            <connections>
+                                <action selector="btnBack:" destination="r4w-E0-nuf" id="l6D-Un-zbd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="414" height="1300"/>
+                    <connections>
+                        <outlet property="foodImage" destination="XeI-ZY-5og" id="VqL-3d-ap1"/>
+                        <outlet property="foodIngredients" destination="LOf-qC-v2t" id="Vsu-Wm-1aM"/>
+                        <outlet property="foodName" destination="ANC-SR-bTX" id="NLx-W6-XhB"/>
+                        <outlet property="foodProccessing" destination="cRK-Pe-ten" id="Yzz-oH-7Ub"/>
+                        <outlet property="likes" destination="H1F-lx-etb" id="1ba-LG-iYe"/>
+                        <outlet property="userComment" destination="1V0-yA-xFx" id="BDF-tR-swV"/>
+                        <outlet property="userImage" destination="SOU-K7-u8C" id="EiP-FM-3Aa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9NC-XP-aNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1830.4347826086957" y="3222.9910714285711"/>
+        </scene>
+        <!--Recipe Detail Navigation Controller-->
+        <scene sceneID="Qfm-Xh-ou1">
+            <objects>
+                <navigationController storyboardIdentifier="RecipeDetailNavigationController" id="b9z-iy-K25" customClass="RecipeDetailNavigationController" customModule="FoodRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mtd-AA-AA5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="r4w-E0-nuf" kind="relationship" relationship="rootViewController" id="asg-6S-dHq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4m-Az-Maq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1829" y="2336"/>
         </scene>
         <!--Home Table View Controller-->
         <scene sceneID="KKb-8r-jYy">
@@ -606,7 +764,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bQ-A9-BYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="839"/>
+            <point key="canvasLocation" x="500" y="841"/>
         </scene>
     </scenes>
     <resources>
