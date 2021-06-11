@@ -48,6 +48,8 @@ class SettingViewController: UIViewController {
         
         self.present(login, animated: true, completion: nil)
     }
+class SettingViewController: UIViewController {
+
     var ref:DatabaseReference!
     var storage:StorageReference!
     var databaseHandle:DatabaseHandle!
