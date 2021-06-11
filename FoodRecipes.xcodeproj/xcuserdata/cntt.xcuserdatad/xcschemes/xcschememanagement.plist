@@ -7,6 +7,20 @@
 		<key>FoodRecipes.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>66E584B5262A7CCD00A619A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>66E584C9262A7CD100A619A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 			<integer>16</integer>
 		</dict>
 	</dict>
