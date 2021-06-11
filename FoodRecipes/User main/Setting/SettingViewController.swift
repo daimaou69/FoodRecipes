@@ -38,6 +38,16 @@ extension UIImageView {
     }
 }
 
+var userid:String = ""
+
+class SettingViewController: UIViewController {
+
+    @IBAction func btntableRepice(_ sender: Any) {
+        let login = self.storyboard?.instantiateViewController(withIdentifier: "tableRepice") as! ListRecipeTableViewController
+        userid = userID!
+        
+        self.present(login, animated: true, completion: nil)
+    }
 class SettingViewController: UIViewController {
 
     var ref:DatabaseReference!
@@ -51,6 +61,7 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var lblUserFullName : UILabel!
     
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -118,6 +129,10 @@ class SettingViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        
     }
     
 }
